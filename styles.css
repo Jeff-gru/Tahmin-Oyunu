@@ -1,0 +1,19 @@
+*{box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#b9e4ff,#f0fff4);display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
+.game{background:#fff;padding:20px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.1);max-width:700px;width:100%;text-align:center}
+h1{margin:0 0 20px;font-size:24px;color:#222}
+.board{display:grid;gap:12px;grid-template-columns:repeat(4,1fr);justify-items:center}
+.message{margin-top:16px;font-weight:bold;color:#333}
+
+/* kart */
+.card{width:100%;padding-top:100%;position:relative;cursor:pointer;perspective:1000px}
+.card-inner{position:absolute;inset:0;transition:transform 0.6s;transform-style:preserve-3d;border-radius:10px}
+.card-front,.card-back{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:28px;font-weight:700;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.card-front{background:#ffffff;border:2px solid #cce0ff;color:#2a3f5f}
+.card-back{background:#4caf50;color:#fff;transform:rotateY(180deg)}
+.card.flipped .card-inner{transform:rotateY(180deg)}
+.card.matched{opacity:0.6;cursor:default}
+
+/* popup */
+.popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.8);background:#4caf50;color:#fff;padding:18px 36px;border-radius:12px;font-size:22px;font-weight:700;opacity:0;transition:all .35s ease}
+.popup.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
